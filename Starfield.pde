@@ -18,12 +18,38 @@ trump.move();
 }
 class Particle
 {
-	double x,y,angle,speed;
-	Particle()
+  double x,y,angle,speed;
+  Particle()
   {
     x=300;
     y=300;
     angle=PI;
     speed=20;
   }
+}
+class NormalParticle implements Particle
+{
+  double x , y , angle , speed;
+  int  size;
 
+  NormalParticle(){
+  x = 400;
+  y = 400;
+  dth = (Math.random()*2)*Math.PI;
+  spd = (Math.random()*10)+1;
+  size = 8;
+
+     
+    
+  }
+   public void move(){
+     dth = dth + .01;
+  x += Math.cos(dth)*spd;
+  y += Math.sin(dth)*spd;
+  
+    }
+  
+  public void show(){
+  noStroke();
+
+  }}
