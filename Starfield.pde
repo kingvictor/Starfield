@@ -21,10 +21,9 @@ class Particle
 	double x,y,angle,speed;
 	Particle()
   {
-    x=
-    y=
-    angle=
-    speed=
+    x=300;
+    y=300;
+    angle=PI;
+    speed=20;
   }
-  public void move ()
-  x=
+
