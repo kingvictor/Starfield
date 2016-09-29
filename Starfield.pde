@@ -3,7 +3,7 @@ void setup()
   {
     size (200,200);
     cow=new Particle [100];
-    for (int i = 0; i< cow.length; i++)
+    for (int i = 0; i< cow.length; i+=10)
     {
       cow [i] = new NormalParticle ();
     }
@@ -11,7 +11,7 @@ void setup()
 void draw ()
   {
     background (255);
-    for (int i = 0; i <cow.length; i++)
+    for (int i = 0; i <cow.length; i+=10)
     {
       cow [i].move();
       cow [i].show();
