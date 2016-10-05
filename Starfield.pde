@@ -1,5 +1,5 @@
 NormalParticle [] cow= new NormalParticle[200];
-
+OddballParticle sim = new OddballParticle();
 void setup()
 {
   size (500, 500);
@@ -17,7 +17,8 @@ void draw ()
     cow [i].show();
     cow [i].move();
   }
-
+  sim.move();
+  sim.show();
 }
 interface Particle
 {
@@ -50,15 +51,18 @@ class NormalParticle implements Particle
 }
 class OddballParticle implements Particle
 {
+    double myX, myY;
   OddballParticle()
-  {}
+{
+  myX=100;
+  myY=100;
+}
   public void move()
-  {}
+  {
+      myX= myX+(Math.cos(5)*10);
+    myY= myY+(Math.sin(5)*10);}
   public void show()
   {
-    int a = (int)(Math.random()*255);
-    int r = (int)(Math.random()*255);
-    int t = (int)(Math.random()*255);
-    fill (a, r, t);
+       ellipse ((float)myX, (float)myY, 100, 100);
   }
 }
