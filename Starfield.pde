@@ -1,14 +1,15 @@
 NormalParticle [] cow= new NormalParticle[200];
-OddballParticle sim = new OddballParticle();
-JumboParticle on = new JumboParticle();
-PImage img;
+
 void setup()
 {
   size (500, 500);
   frameRate(50);
   for (int i = 0; i< cow.length; i++)
   {
-    cow [i] = new NormalParticle ();
+  cow [i] = new NormalParticle (250,250);
+  }
+  OddballParticle sim = new OddballParticle();
+  JumboParticle on = new JumboParticle();
   }
   img = loadImage("trump.jpg");
 }
