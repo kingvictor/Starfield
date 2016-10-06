@@ -1,11 +1,11 @@
-NormalParticle [] cow= new NormalParticle[1000];
+NormalParticle [] cow= new NormalParticle[200];
 OddballParticle sim = new OddballParticle();
 JumboParticle on = new JumboParticle();
 PImage img;
 void setup()
 {
   size (500, 500);
-  frameRate(900);
+  frameRate(50);
   for (int i = 0; i< cow.length; i++)
   {
     cow [i] = new NormalParticle ();
