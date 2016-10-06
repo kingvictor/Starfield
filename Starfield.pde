@@ -1,5 +1,4 @@
 NormalParticle [] cow= new NormalParticle[200];
-
 void setup()
 {
   size (500, 500);
@@ -8,10 +7,9 @@ void setup()
   {
   cow [i] = new NormalParticle (250,250);
   }
-  OddballParticle sim = new OddballParticle();
-  JumboParticle on = new JumboParticle();
+  particle [0]= new OddballParticle();
+  particle [1]= new JumboParticle();
   }
-  img = loadImage("trump.jpg");
 }
 void draw ()
 {
@@ -21,10 +19,6 @@ void draw ()
     cow [i].show();
     cow [i].move();
   }
-  sim.move();
-  sim.show();
-  on.move();
-  on.show();
 }
 interface Particle
 {
