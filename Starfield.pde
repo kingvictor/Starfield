@@ -1,16 +1,15 @@
-NormalParticle [] cow= new NormalParticle[200];
+Particle [] cow= new Particle[200];
 void setup()
 {
   size (500, 500);
   frameRate(50);
   for (int i = 0; i< cow.length; i++)
   {
-  cow [i] = new NormalParticle (250,250);
+    cow[i] = new NormalParticle();
   }
-  particle [0]= new OddballParticle();
-  particle [1]= new JumboParticle();
+  cow [0]= new OddballParticle();
+  cow [1]= new JumboParticle();
   }
-}
 void draw ()
 {
   background (255);
