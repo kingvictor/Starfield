@@ -92,6 +92,6 @@ class JumboParticle implements Particle
   }
   public void show()
   {
-   image(trump.png, 0, 0);
+  img = loadImage("Trump.png");
   }
 }
