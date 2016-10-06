@@ -1,13 +1,16 @@
-NormalParticle [] cow= new NormalParticle[200];
+NormalParticle [] cow= new NormalParticle[1000];
 OddballParticle sim = new OddballParticle();
+JumboParticle on = new JumboParticle();
+PImage img;
 void setup()
 {
   size (500, 500);
-  frameRate(10);
+  frameRate(900);
   for (int i = 0; i< cow.length; i++)
   {
     cow [i] = new NormalParticle ();
   }
+  img = loadImage("trump.jpg");
 }
 void draw ()
 {
@@ -19,6 +22,8 @@ void draw ()
   }
   sim.move();
   sim.show();
+  on.move();
+  on.show();
 }
 interface Particle
 {
@@ -27,18 +32,19 @@ interface Particle
 }
 class NormalParticle implements Particle
 {
-  double myX, myY, speed, angle;
+  float myX, myY, speed, angle;
   NormalParticle()
   {
     myX=250;
     myY=250;
-    speed= (Math.random()*30);
-    angle= (Math.random()*2*PI);
+    speed= (float) (Math.random()*30);
+    angle= (float)(Math.random()*2*PI);
   }
   public void move()
   {
-    myX= myX+(Math.cos(angle)*speed);
-    myY= myY+(Math.sin(angle)*speed);
+    myX+=(Math.cos(angle)*speed);
+    myY+=(Math.sin(angle)*speed);
+    angle=angle+0.1;
   }
   public void show()
   {
@@ -47,11 +53,13 @@ class NormalParticle implements Particle
     int t = (int)(Math.random()*255);
     fill (a, r, t);
     ellipse ((float)myX, (float)myY, 10, 10);
+    ellipse((float)myX-15,(float)myY-9,8,8);
+    ellipse((float)myX+15,(float)myY-9,8,8);
   }
 }
 class OddballParticle implements Particle
 {
-    double myX, myY;
+    float myX, myY;
   OddballParticle()
 {
   myX=100;
@@ -59,10 +67,31 @@ class OddballParticle implements Particle
 }
   public void move()
   {
-      myX= myX+(Math.cos(5)*10);
-    myY= myY+(Math.sin(5)*10);}
+    myX+=0;
+    myY+=0;}
   public void show()
   {
        ellipse ((float)myX, (float)myY, 100, 100);
+  }
+}
+class JumboParticle implements Particle
+{
+  float myX, myY, speed, angle;
+  JumboParticle()
+  {
+    myX=250;
+    myY=250;
+    speed= (float) (Math.random()*30);
+    angle= (float)(Math.random()*2*PI);
+  }
+  public void move()
+  {
+    myX+=(Math.cos(angle)*speed);
+    myY+=(Math.sin(angle)*speed);
+    angle=angle+0.1;
+  }
+  public void show()
+  {
+   image(trump.png, 0, 0);
   }
 }
