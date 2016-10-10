@@ -1,4 +1,4 @@
-Particle [] cow= new Particle[20];
+Particle [] cow= new Particle[30];
 void setup()
 {
   size (500, 500);
@@ -91,71 +91,5 @@ class JumboParticle implements Particle
     int t = (int)(Math.random()*255);
     fill (a, r, t);
     rect ((float)myX, (float)myY, 20, 20);
-  }
-}
-  }
-  public void move()
-  {
-    myX+=(Math.sin(angle)*5*PI);
-    myY+=(Math.cos(angle)*5*PI);
-    angle=angle+0.1;
-  }
-  public void show()
-  {
-   // int a = (int)(Math.random()*255);
-   // int r = (int)(Math.random()*255);
-   // int t = (int)(Math.random()*255);
-
-    //fill (a, r, t);
-    ellipse ((float)myX, (float)myY, 10, 10);
-   //fill (0);
-   //ellipse ((float)myX-5, (float)myY+5, 10, 10);
-     //noFill();
-     //Stroke();
-     //ellipse((float)myX-15,(float)myY-9,8,8);
-     //ellipse((float)myX+15,(float)myY-9,8,8);
-  }
-}
-class OddballParticle implements Particle
-{
-    float myX, myY;
-  OddballParticle()
-{
-  myX=100;
-  myY=100;
-}
-  public void move()
-  {
-    myX+=1;
-    myY+=1;
-  }
-  public void show()
-  {
-  rect ((float)myX, (float)myY, 10, 10);
-  }
-}
-class JumboParticle implements Particle
-{
-  float myX, myY, speed, angle;
-  JumboParticle()
-  {
-    myX=250;
-    myY=250;
-    speed= (float) (Math.random()*30);
-    angle= (float)(Math.random()*2*PI);
-  }
-  public void move()
-  {
-    myX+=(Math.sin(angle)*5*PI);
-    myY+=(Math.cos(angle)*5*PI);
-    angle=angle+0.1;
-  }
-  public void show()
-  {
-    int a = (int)(Math.random()*255);
-    int r = (int)(Math.random()*255);
-    int t = (int)(Math.random()*255);
-    fill (a, r, t);
-    ellipse ((float)myX, (float)myY, 20, 20);
   }
 }
