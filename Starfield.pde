@@ -44,6 +44,64 @@ class NormalParticle implements Particle
   }
   public void show()
   {
+    int a = (int)(Math.random()*255);
+    int r = (int)(Math.random()*255);
+    int t = (int)(Math.random()*255);
+    fill (a, r, t);
+    ellipse ((float)myX, (float)myY, 10, 10);
+  }
+}
+class OddballParticle implements Particle
+{
+    float myX, myY,angle;
+  OddballParticle()
+{
+  myX=width;
+  myY=height;
+
+}
+  public void move()
+  {}
+  public void show()
+  {
+    fill(255);
+    ellipse (random(width),random(height),10,10);
+  }
+}
+class JumboParticle implements Particle
+{
+  float myX, myY, speed, angle;
+  JumboParticle()
+  {
+    myX=250;
+    myY=250;
+    speed= (float) (Math.random()*30);
+    angle= (float)(Math.random()*2*PI);
+  }
+  public void move()
+  {
+    myX+=(Math.sin(angle)*5*PI);
+    myY+=(Math.cos(angle)*5*PI);
+    angle=angle+0.1;
+  }
+  public void show()
+  {
+    int a = (int)(Math.random()*255);
+    int r = (int)(Math.random()*255);
+    int t = (int)(Math.random()*255);
+    fill (a, r, t);
+    rect ((float)myX, (float)myY, 20, 20);
+  }
+}
+  }
+  public void move()
+  {
+    myX+=(Math.sin(angle)*5*PI);
+    myY+=(Math.cos(angle)*5*PI);
+    angle=angle+0.1;
+  }
+  public void show()
+  {
    // int a = (int)(Math.random()*255);
    // int r = (int)(Math.random()*255);
    // int t = (int)(Math.random()*255);
