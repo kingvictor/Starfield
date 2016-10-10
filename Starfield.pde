@@ -90,6 +90,6 @@ class JumboParticle implements Particle
     int r = (int)(Math.random()*255);
     int t = (int)(Math.random()*255);
     fill (a, r, t);
-    rect ((float)myX, (float)myY, 20, 20);
+    ellipse ((float)myX, (float)myY, 20, 20);
   }
 }
